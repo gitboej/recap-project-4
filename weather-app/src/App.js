@@ -1,5 +1,5 @@
 import "./App.css";
-import Form from "./componets/Form/index.js";
+import Form from "./components/Form/index.js";
 import { useState } from "react";
 import { uid } from "uid";
 

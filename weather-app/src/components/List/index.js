@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import "./List.css";
 
 export default function List({ activities, isGoodWeather, onDeleteActivity }) {
   return (
@@ -10,12 +10,12 @@ export default function List({ activities, isGoodWeather, onDeleteActivity }) {
       )}
       <ul>
         {activities.map((activity) => (
-          <Fragment key={activity.id}>
+          <div key={activity.id} className="listItems">
             <li>{activity.name}</li>
             <button onClick={() => onDeleteActivity(activity.id)}>
               Delete
             </button>
-          </Fragment>
+          </div>
         ))}
       </ul>
     </>

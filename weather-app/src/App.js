@@ -9,7 +9,7 @@ function App() {
   const [activities, setActivities] = useLocalStorageState("_ACTIVITIES_", {
     defaultValue: [],
   });
-  const [weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState({});
   // const isGoodWeather = true;
 
   function handleAddActivity(newActivity) {

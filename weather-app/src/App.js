@@ -43,7 +43,7 @@ function App() {
   //loadWeather();
 
   return (
-    <>
+    <main className="app">
       <h1>
         {weather.condition}
         {"    "} {weather.temperature}°C
@@ -56,7 +56,7 @@ function App() {
         onDeleteActivity={handleDeleteActivity}
       />
       <Form onAddActivity={handleAddActivity} />
-    </>
+    </main>
   );
 }
 

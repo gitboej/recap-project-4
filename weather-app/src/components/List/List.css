@@ -1,0 +1,13 @@
+.listItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  background-color: paleturquoise;
+  padding: 2vh;
+  border-radius: 10px;
+}
+
+li {
+  list-style: none;
+}

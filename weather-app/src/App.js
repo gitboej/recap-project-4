@@ -16,6 +16,10 @@ function App() {
     setActivities([{ id: uid(), ...newActivity }, ...activities]);
   }
 
+  function handleDeleteActivity(id) {
+    setActivities(activities.filter(activity => activity.id !== id))
+  }
+
   useEffect(() => {
     async function loadWeather() {
       try {
@@ -45,6 +49,7 @@ function App() {
           (activity) => activity.isForGoodWeather === weather.isGoodWeather
         )}
         isGoodWeather={weather.isGoodWeather}
+        onDeleteActivity={handleDeleteActivity}
       />
       <Form onAddActivity={handleAddActivity} />
     </>

@@ -1,4 +1,6 @@
-export default function List({ activities, isGoodWeather }) {
+import { Fragment } from "react";
+
+export default function List({ activities, isGoodWeather, onDeleteActivity }) {
   return (
     <>
       {isGoodWeather ? (
@@ -8,7 +10,12 @@ export default function List({ activities, isGoodWeather }) {
       )}
       <ul>
         {activities.map((activity) => (
-          <li>{activity.name}</li>
+          <Fragment key={activity.id}>
+            <li>{activity.name}</li>
+            <button onClick={() => onDeleteActivity(activity.id)}>
+              Delete
+            </button>
+          </Fragment>
         ))}
       </ul>
     </>

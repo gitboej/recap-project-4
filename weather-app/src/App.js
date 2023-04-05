@@ -17,26 +17,30 @@ function App() {
   }
 
   function handleDeleteActivity(id) {
-    setActivities(activities.filter(activity => activity.id !== id))
+    setActivities(activities.filter((activity) => activity.id !== id));
   }
 
   useEffect(() => {
-    async function loadWeather() {
-      try {
-        const response = await fetch(
-          "https://example-apis.vercel.app/api/weather"
-        );
-        const data = await response.json();
-        console.log(data);
-        setWeather(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
     loadWeather();
+    const interval = setInterval(loadWeather, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   console.log(activities);
+
+  async function loadWeather() {
+    try {
+      const response = await fetch(
+        "https://example-apis.vercel.app/api/weather"
+      );
+      const data = await response.json();
+      console.log(data);
+      setWeather(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  //loadWeather();
 
   return (
     <>
